@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>UzSaleMotorsTask1</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div>
+        <h1>JOB #124667</h1>
+      </div>
+      <ul class="navbar-ul">
+        <li>
+          <p>Support</p>
+          <p>Owner</p>
+        </li>
+        <li>
+          <button class="followbtn">1 follower
+            <i class="fa fa-caret-down"></i>
+          </button>
+        </li>
+        <li>
+          <div class="dropdown">
+            <button class="dropbtn">Won
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">Duplicate</a>
+              <a href="#">Merge</a>
+              <a href="#">Export as XLS</a>
+              <a href="#">Convert a lead</a>
+              <a href="#">Delete</a>
+              <div class="line">
+                <a href="#">Share feedback <span class="acc">NEW</span></a>
+                <a href="#">Learn more about beta <span class="acc">NEW</span></a>
+              </div>
+              <a href="#" class="line1">Manage sidebar sections</a>
+              <a href="#" class="line1">Manage app's visibility
+              </a>
+              <button class="btn-link" onclick="openModal()">
+                 <span class="sp-yel">W</span> NEW Create a job
+              </button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <button class="lost">Lost</button>
+        </li>
+        <li>
+          <button class="followbtn">
+            <i class="fa-solid fa-border-all"></i>
+            <i class="fa fa-caret-down"></i>
+          </button>
+        </li>
+        <li>
+          <button class="followbtn">
+            <i class="fa-solid fa-ellipsis"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h3>NEW Create a job</h3>
+        <p id="close-modal">❌</p>
+      </div>
+      <div class="modal-body">
+        <form id="form" class="form">
+          <div class="card">
+            <h2>Client details</h2>
+            <div class="card-flex">
+              <input type="text" id="firstname" placeholder="First name">
+              <input type="text" id="lastname" placeholder="Last name">
+            </div>
+            <input type="text" id="phone" placeholder="Phone">
+            <input type="text" id="email" placeholder="Email(optional)">
+          </div>
+          <div class="card">
+            <h2>Job details</h2>
+            <div class="card-flex">
+              <select id="job-type" >
+                <option selected disabled>Job Type</option>
+                <option value="economist">Economist</option>
+                <option value="doctor">Doctor</option>
+              </select>
+              <select id="job-source">
+                <option selected disabled>Job Sourse</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <textarea type="text"  id="description" placeholder="Job description (optional)"></textarea>
+          </div>
+          <div class="card">
+            <h2>Service location</h2>
+            <input type="text" id="address" placeholder="Address">
+            <input type="text" id="city" placeholder="City">
+            <input type="text" id="state" placeholder="State">
+            <div class="card-flex">
+              <input type="text" id="zip-code" placeholder="Zip code">
+              <select id="area">
+                <option selected>Area</option>
+                <option value="1000">1000</option>
+                <option value="2000">2000</option>
+              </select>
+            </div>
+          </div>
+          <div class="card">
+            <h2>Scheduled</h2>
+            <input type="date" id="datetimes" placeholder="Start Date">
+            <div class="card-flex">
+              <div class="label-top">
+                <label for="startTime">StartTime</label>
+                <input type="time" id="startTime">
+              </div>
+              <div class="label-top">
+                <label for="endTime">EndTime</label>
+                <input type="time" id="endTime" >
+              </div>
+              
+            </div>
+            <select id="test-select">
+              <option selected disabled>Test Select</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+  
+        
+      </div>
+      <div class="modal-footer">
+        <button type="submit" id="modal-submit">Create Job</button>
+        <button type="reset" id="modal-save">Reset Info</button>
+      </div>
+    </form>
+    </div>
+    <div id="shadow"></div>
+
+    <div id="result">
+    </div>
+  </main>
+
+
+  <script src="./js/index.js"></script>
+</body>
+</html>
