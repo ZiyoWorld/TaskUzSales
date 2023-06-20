@@ -62,12 +62,12 @@ const formValidation = ()=>{
     }
 };
 
-let data = {};
+let data = [];
 
 let acceptData = () => {
      
-    data = {
-        id: 0,
+    data.push({
+        id: (prev)=> prev + 1,
         firstname: firstname.value,
         lastname: lastname.value,
         email: email.value,
@@ -84,12 +84,15 @@ let acceptData = () => {
         startTime: startTime.value,
         endTime: endTime.value,
         testSelect: testSelect.value,
-    };
-    createPost();
+    });
+    localStorage.setItem("data", JSON.stringify(data));
+    createTasks();
 };
   let createPost = () => {
-    result.innerHTML += `
-    <div class="result-container">
+    result.innerHTML = "";
+    data.map((data, y)=>{
+      return(result.innerHTML += `
+      <div class="result-container" id=${y}>
       <ul class="list">
       <li><h3>Client details</h3></li>
       <li> FirstName - ${data.firstname}</li>
@@ -113,7 +116,7 @@ let acceptData = () => {
         <i onClick="deletePost(this)" class="fas fa-trash-alt"></i>
       </span>
     </div>
-    `;
+    `)});
     firstname.value = "";
     lastname.value = "";
     email.value = "";
